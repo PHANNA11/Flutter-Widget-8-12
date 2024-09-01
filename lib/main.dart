@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screen/google_map_screen.dart';
 import 'package:flutter_app/screen/home_screen_widget.dart';
 import 'package:flutter_app/screen/profile_screen_widget.dart';
 
@@ -39,7 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List<Widget> pages = [HomeScreenWidget(), ProfileScreenWidget()];
+  List<Widget> pages = [
+    const HomeScreenWidget(),
+    const ProfileScreenWidget(),
+    const GoogleMapScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: onTapIndex,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.map_outlined), label: 'Maps')
           ]),
     );
   }
